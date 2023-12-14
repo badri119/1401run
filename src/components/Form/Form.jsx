@@ -5,6 +5,7 @@ import './Form.css';
 function Form() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [time, setTime] = useState('');
   const [feedback, setFeedback] = useState('');
   const [success, setSuccess] = useState(null);
 
@@ -15,6 +16,7 @@ function Form() {
     const data = {
       Name: name,
       Email: email,
+      Time: time,
       Feedback: feedback,
     };
 
@@ -26,8 +28,9 @@ function Form() {
       console.log(response);
       setName('');
       setEmail('');
+      setTime('');
       setFeedback('');
-      setSuccess('Awesome, you will get a message soon! 🏃');
+      setSuccess('Awesome, you will get an Email soon! Happy Running 🏃');
     } catch (error) {
       console.error('Error occurred:', error);
     }
@@ -52,6 +55,13 @@ function Form() {
               onChange={e => setEmail(e.target.value)}
               value={email}
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            />
+            <input
+              placeholder="Your Availability and time"
+              type="text"
+              onChange={e => setTime(e.target.value)}
+              required
+              value={time}
             />
             <input
               placeholder="Your feedback (Optional)"
