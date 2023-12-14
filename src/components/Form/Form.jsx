@@ -4,7 +4,7 @@ import './Form.css';
 
 function Form() {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
   const [feedback, setFeedback] = useState('');
   const [success, setSuccess] = useState(null);
 
@@ -14,7 +14,7 @@ function Form() {
 
     const data = {
       Name: name,
-      Number: phone,
+      Email: email,
       Feedback: feedback,
     };
 
@@ -25,7 +25,7 @@ function Form() {
       );
       console.log(response);
       setName('');
-      setPhone('');
+      setEmail('');
       setFeedback('');
       setSuccess('Awesome, you will get a message soon! 🏃');
     } catch (error) {
@@ -45,13 +45,14 @@ function Form() {
               value={name}
             />
             <input
-              placeholder="Your 10 Digit Phone Number"
-              type="tel"
+              placeholder="Your Email"
+              type="email"
               name="customerPhone"
               required
-              onChange={e => setPhone(e.target.value)}
-              value={phone}
-              pattern="[0-9]{10}"
+              onChange={e => setEmail(e.target.value)}
+              value={email}
+              pattern=".+@example\.com"
+              size="30"
             />
             <input
               placeholder="Your feedback (Optional)"
