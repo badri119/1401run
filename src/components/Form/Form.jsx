@@ -10,7 +10,7 @@ function Form() {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    console.log(name, phone);
+    console.log(name, email);
 
     const data = {
       Name: name,
@@ -51,8 +51,7 @@ function Form() {
               required
               onChange={e => setEmail(e.target.value)}
               value={email}
-              pattern=".+@example\.com"
-              size="30"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             />
             <input
               placeholder="Your feedback (Optional)"
