@@ -30,11 +30,6 @@ p {
   font-weight: bold;
   font-size: larger;
 }
-
-.span1 {
-  color: #ffffcc;
-}
-
-.span2 {
+span {
   color: #ffffcc;
 }
